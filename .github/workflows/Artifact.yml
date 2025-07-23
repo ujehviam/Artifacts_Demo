@@ -21,8 +21,8 @@ jobs:
         steps:
             - name: get feedback form this deployment
               run: |
-                  echo "share this printout" > Artifacts_folder/artifacts.txt
-                  echo "this is a job actifact" >> Artifacts_folder/artifacts.txt
+                  echo "share this printout" > ../Artifacts_folder/artifacts.txt
+                  echo "this is a job actifact" >> ../Artifacts_folder/artifacts.txt
             - name: get artifacts
               uses: actions/upload-artifact@v4
               with:

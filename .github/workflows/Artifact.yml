@@ -21,13 +21,13 @@ jobs:
         steps:
             - name: get feedback form this deployment
               run: |
-                  echo "share this printout" > ../../Artifacts_folder/artifacts.txt
-                  echo "this is a job actifact" >> ../../Artifacts_folder/artifacts.txt
+                  echo "share this printout" > ARTIFACTS_DEMO/Artifacts_folder/artifacts.txt
+                  echo "this is a job actifact" >> ARTIFACTS_DEMO/Artifacts_folder/artifacts.txt
             - name: get artifacts
               uses: actions/upload-artifact@v4
               with:
                 name: my_artifacts
-                path: ../../Artifacts_folder/artifacts.txt 
+                path: ARTIFACTS_DEMO/Artifacts_folder/artifacts.txt
     
     Deploy:
         needs: Get_Feedback

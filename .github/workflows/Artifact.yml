@@ -13,8 +13,8 @@ jobs:
               run: pip install flask
             - name: test code
               run: |
-                  python3 test_app.py &
-                  python3 app.py
+                  python3 test_app.py
+                  python3 app.py &
     
     Get_Feedback:
         runs-on: ubuntu-latest

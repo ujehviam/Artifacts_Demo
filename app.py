@@ -14,6 +14,7 @@ html_form = '''
   <body>
     <h2>User Login / Signup</h2>
     <form method="POST" action="/login">
+      <h4 style="text-align: center; color: blue;">ARTIFACTS DEMO</h4>
       <label>Username:</label><br>
       <input type="text" name="username" required><br><br>
       <label>Password:</label><br>

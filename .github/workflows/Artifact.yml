@@ -1,0 +1,39 @@
+name: Job Artifacts
+on:
+    push:
+        branches:
+            - master
+jobs:
+    Run_Code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get code
+              uses: actions/checkout@v4
+            - name: install dependencies
+              run: pip install flask
+            - name: test code
+              run: |
+                  python3 test_app.py &
+                  python3 app.py
+    
+    Get_Feedback:
+        runs-on: ubuntu-latest:
+        steps:
+            - name: get feedback form this deployment
+              run: |
+                  echo "share this printout"
+                  echo "this is a job actifact"
+            - name: get artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: my_artifacts
+                path: Artifacts_folder
+    
+    Deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get code
+              uses: actions/checkout@v4
+            - name: Deploy code
+              run: echo "deploying..."
+

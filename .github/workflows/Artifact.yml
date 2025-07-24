@@ -19,15 +19,8 @@ jobs:
     Get_Feedback:
         runs-on: ubuntu-latest
         steps:
-            - name: get feedback form this deployment
-              run: |
-                  echo "share this printout" > Artifacts_folder/artifacts.txt
-                  echo "this is a job actifact" >> Artifacts_folder/artifacts.txt
-            - name: get artifacts
-              uses: actions/upload-artifact@v4
-              with:
-                name: my_artifacts
-                path: Artifacts_folder/artifacts.txt
+            - name: get job info
+              run: echo "${{ toJSON(github) }}"
     
     Deploy:
         needs: Get_Feedback

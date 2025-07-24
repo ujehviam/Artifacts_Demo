@@ -22,7 +22,7 @@ jobs:
             - name: get job info
               run: echo "${{ toJSON(github) }}"
             - name: push job info into Artifacts folder
-              uses: actions/download-artifact@v4
+              uses: actions/upload-artifact@v4
               with: 
                 name: get job info
                 path: Artifacts_folder/artifacts.txt

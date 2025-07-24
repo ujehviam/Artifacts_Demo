@@ -20,12 +20,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: get job info
-              run: echo "pwd" > artifact_Demo.json
+              run: pwd > artifact_Demo.txt
             - name: push job info into Artifacts folder
               uses: actions/upload-artifact@v4
               with: 
                 name: github-context
-                path: artifact_Demo.json
+                path: artifact_Demo.txt
     
     Deploy:
         runs-on: ubuntu-latest

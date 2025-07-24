@@ -25,7 +25,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with: 
                 name: github-context
-                path: gartifact_Demo.json
+                path: artifact_Demo.json
     
     Deploy:
         runs-on: ubuntu-latest

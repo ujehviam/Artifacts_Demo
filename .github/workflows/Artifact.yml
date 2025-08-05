@@ -20,7 +20,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: get job info
-              run: echo "hello my dear" >> /home/Mayaki/Desktop/Projects/Artifacts_Demo/Artifacts_folder
+              run: echo "hello my dear" >> /home/Mayaki/Desktop/Projects/Artifacts_Demo/Artifacts_folder/artifacts.txt
             - name: push job info into Artifacts folder
               uses: actions/upload-artifact@v4
               with: 

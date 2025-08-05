@@ -19,17 +19,20 @@ jobs:
     Get_Feedback:
         runs-on: ubuntu-latest
         steps:
-            - name: get job info
-              run: echo "hello my dear" >> /home/Mayaki/Desktop/Projects/Artifacts_Demo/Artifacts_folder/artifacts.txt
-            - name: push job info into Artifacts folder
-              uses: actions/upload-artifact@v4
-              with: 
-                name: github-artifacts-trial
-                path: |
-                  Artifacts_folder
-                  artifacts.txt
+          - name: Checkout repo
+            uses: actions/checkout@v4
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.10'
+          - name: Run Python script
+            run: python generate_report.py
+          - name: Upload report as artifact
+            uses: actions/upload-artifact@v4
+            with:
+              name: report-artifact
+              path: report.json
 
-    
     Deploy:
         runs-on: ubuntu-latest
         steps:

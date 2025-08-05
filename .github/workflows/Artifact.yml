@@ -10,7 +10,7 @@ jobs:
             - name: get code
               uses: actions/checkout@v4
             - name: install dependencies
-              run: pip install flask
+              run: pip install -r requirements.txt
             - name: test code
               run: python3 app.py &
 
@@ -24,7 +24,7 @@ jobs:
             with:
               python-version: '3.10'
           - name: install dependencies
-            run: pip install flask
+            run: pip install -r requirements.txt
           - name: Run Python script
             run: python generate_report.py
           - name: Upload report as artifact
@@ -40,7 +40,7 @@ jobs:
             - name: get code
               uses: actions/checkout@v4
             - name: install dependencies
-              run: pip install flask
+              run: pip install -r requirements.txt
             - name: get buils artifacts
               uses: actions/download-artifact@v4
               with:

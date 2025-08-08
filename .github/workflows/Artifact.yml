@@ -69,6 +69,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print ENVIRONMENT VARIABLE
-              run: echo "$GREETINGS ! $FIRSTNAME $LASTNAME "
+              run: echo "$GREETINGS'!' $FIRSTNAME $LASTNAME "
               
 

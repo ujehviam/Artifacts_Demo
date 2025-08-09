@@ -1,0 +1,41 @@
+name: Test_all_Artifacts
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        types:
+            - opened
+    workflow_dispatch:
+env:
+    VAR_A: Hello
+    VAR_B: How
+jobs:
+    First_Job:
+        runs-on: ubuntu_latest
+        env:
+            JOB_EVN_1: Emmanuel
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+            - name: setup python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'
+            - name: cache dependencies
+              uses: actions/cache@v4
+              with:
+                path: ~/.cache/pip
+                key: ${{ hashFiles('requiremt.txt') }}
+            - name: install pip
+              run: python -m pip install --upgrade pip
+            - name: install dependencies
+              run: pip install -r requirment.txt
+            - name: read info from job
+              run: echo ${{ toJSON(github.event) }}
+            - name: process env variables
+              run: echo "${VAR_A} ${JOB_ENV_1}!, $VAR_B are you"
+            
+
+
+
